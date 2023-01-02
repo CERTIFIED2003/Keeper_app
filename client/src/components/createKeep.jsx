@@ -32,19 +32,18 @@ export function CreateKeep(props){
 
     function handleSubmit(e) {
         console.log(keep);
+        e.preventDefault();
         axios
             .post("http://localhost:8000/api/keep", keep)
             .then((res) => {
                 console.log(res.data.message);
                 setKeep({title: "", description: ""});
                 shrink();
-                props.onAdd();
             })
             .catch((err) => {
                 console.log("error could not create");
                 console.log(err.message);
             });
-        e.preventDefault();
     }
 
     

@@ -6,7 +6,6 @@ export function UpdateKeep({_id, handleClose, handleUpdate}){
 
     function handleChange(event){
         const {name, value} = event.target;
-
         setData((data) => ({...data, [name]: value}));
     }
     function handleSubmit(event){
